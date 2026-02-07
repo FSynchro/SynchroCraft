@@ -1,0 +1,224 @@
+{
+  "version": 1,
+  "mobs": [
+    {
+      "mobName": "minecraft:spider",
+      "samples": [0, 0, 0, 500]
+    },
+    {
+      "mobName": "thaumcraft:taintseedprime",
+      "samples": [0, 0, 0, 500]
+    },
+    {
+      "mobName": "minecraft:wither_skeleton",
+      "samples": [500, 0, 0, 0]
+    }
+  ],
+  "drops": [
+    {
+      "drop": { "item": "minecraft:string" },
+      "mobs": [
+        {
+          "mobName": "minecraft:spider",
+          "sizes": [
+            { "count": 1, "looting": 3, "samples": 67 },
+            { "count": 2, "looting": 3, "samples": 132 },
+            { "count": 3, "looting": 3, "samples": 162 },
+            { "count": 4, "looting": 3, "samples": 89 },
+            { "count": 5, "looting": 3, "samples": 29 }
+          ]
+        }
+      ]
+    },
+    {
+      "drop": { "item": "minecraft:spider_eye" },
+      "mobs": [
+        {
+          "mobName": "minecraft:spider",
+          "sizes": [
+            { "count": 1, "looting": 3, "samples": 154 },
+            { "count": 2, "looting": 3, "samples": 123 },
+            { "count": 3, "looting": 3, "samples": 73 },
+            { "count": 4, "looting": 3, "samples": 26 }
+          ]
+        }
+      ]
+    },
+    {
+      "drop": { "item": "actuallyadditions:item_solidified_experience" },
+      "mobs": [
+        {
+          "mobName": "minecraft:spider",
+          "sizes": [
+            { "count": 1, "looting": 3, "samples": 79 },
+            { "count": 2, "looting": 3, "samples": 77 },
+            { "count": 3, "looting": 3, "samples": 67 },
+            { "count": 4, "looting": 3, "samples": 57 },
+            { "count": 5, "looting": 3, "samples": 70 }
+          ]
+        },
+        {
+          "mobName": "thaumcraft:taintseedprime",
+          "sizes": [
+            { "count": 1, "looting": 3, "samples": 72 },
+            { "count": 2, "looting": 3, "samples": 67 },
+            { "count": 3, "looting": 3, "samples": 58 },
+            { "count": 4, "looting": 3, "samples": 86 },
+            { "count": 5, "looting": 3, "samples": 69 }
+          ]
+        },
+        {
+          "mobName": "minecraft:wither_skeleton",
+          "sizes": [
+            { "count": 1, "looting": 0, "samples": 19 },
+            { "count": 2, "looting": 0, "samples": 22 }
+          ]
+        }
+      ]
+    },
+    {
+      "drop": { "item": "minecraft:web" },
+      "mobs": [
+        {
+          "mobName": "minecraft:spider",
+          "sizes": [
+            { "count": 1, "looting": 3, "samples": 52 },
+            { "count": 2, "looting": 3, "samples": 44 },
+            { "count": 3, "looting": 3, "samples": 36 },
+            { "count": 4, "looting": 3, "samples": 35 },
+            { "count": 5, "looting": 3, "samples": 34 }
+          ]
+        }
+      ]
+    },
+    {
+      "drop": {
+        "item": "thaumcraft:crystal_essence",
+        "nbt": "{Aspects:[{amount:1,key:\"vitium\"}]}"
+      },
+      "mobs": [
+        {
+          "mobName": "thaumcraft:taintseedprime",
+          "sizes": [
+            { "count": 1, "looting": 3, "samples": 128 },
+            { "count": 2, "looting": 3, "samples": 261 },
+            { "count": 3, "looting": 3, "samples": 111 }
+          ]
+        }
+      ]
+    },
+    {
+      "drop": { "item": "darkutils:material", "data": 0 },
+      "mobs": [
+        {
+          "mobName": "minecraft:wither_skeleton",
+          "sizes": [
+            { "count": 1, "looting": 0, "samples": 238 }
+          ]
+        }
+      ]
+    },
+    {
+      "drop": { "item": "extrautils2:ingredients", "data": 10 },
+      "mobs": [
+        {
+          "mobName": "minecraft:wither_skeleton",
+          "sizes": [
+            { "count": 1, "looting": 0, "samples": 50 }
+          ]
+        }
+      ]
+    },
+    {
+      "drop": { "item": "thermalfoundation:material", "data": 771 },
+      "mobs": [
+        {
+          "mobName": "minecraft:wither_skeleton",
+          "sizes": [
+            { "count": 1, "looting": 0, "samples": 88 }
+          ]
+        }
+      ]
+    },
+    {
+      "drop": { "item": "quark:black_ash" },
+      "mobs": [
+        {
+          "mobName": "minecraft:wither_skeleton",
+          "sizes": [
+            { "count": 1, "looting": 0, "samples": 118 },
+            { "count": 2, "looting": 0, "samples": 149 },
+            { "count": 3, "looting": 0, "samples": 107 }
+          ]
+        }
+      ]
+    },
+    {
+      "drop": { "item": "minecraft:bone" },
+      "mobs": [
+        {
+          "mobName": "minecraft:wither_skeleton",
+          "sizes": [
+            { "count": 1, "looting": 0, "samples": 85 },
+            { "count": 2, "looting": 0, "samples": 86 }
+          ]
+        }
+      ]
+    },
+    {
+      "drop": { "item": "minecraft:skull", "data": 1 },
+      "mobs": [
+        {
+          "mobName": "minecraft:wither_skeleton",
+          "sizes": [
+            { "count": 1, "looting": 0, "samples": 16 }
+          ]
+        }
+      ]
+    },
+    {
+      "drop": { "item": "tconstruct:materials", "data": 17 },
+      "mobs": [
+        {
+          "mobName": "minecraft:wither_skeleton",
+          "sizes": [
+            { "count": 1, "looting": 0, "samples": 37 }
+          ]
+        }
+      ]
+    },
+    {
+      "drop": { "item": "minecraft:stone_sword" },
+      "mobs": [
+        {
+          "mobName": "minecraft:wither_skeleton",
+          "sizes": [
+            { "count": 1, "looting": 0, "samples": 43 }
+          ]
+        }
+      ]
+    },
+    {
+      "drop": { "item": "thaumcraft:curio", "data": 5 },
+      "mobs": [
+        {
+          "mobName": "thaumcraft:taintseedprime",
+          "sizes": [
+            { "count": 1, "looting": 3, "samples": 16 }
+          ]
+        }
+      ]
+    },
+    {
+      "drop": { "item": "draconicevolution:chaos_shard" },
+      "mobs": [
+        {
+          "mobName": "draconicevolution:chaosguardian",
+          "sizes": [
+            { "count": 2, "looting": 0, "samples": 1 }
+          ]
+        }
+      ]
+    }
+  ]
+}

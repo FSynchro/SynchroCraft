@@ -1,0 +1,166 @@
+[
+    {
+        "mode": "ADD",
+        "result": "[environmentaltech:aethium]",
+        "catalyst": "[minecraft:nether_star]",
+        "energy": 3000000,
+        "tier": 2,
+        "ingredients": [
+            "[environmentaltech:ionite]",
+            "[environmentaltech:ionite]",
+            "[environmentaltech:ionite]",
+            "[environmentaltech:ionite]",
+            "[ingotDraconiumAwakened]",
+            "[blockEnderium]"
+        ]
+    },
+    {
+        "mode": "ADD",
+        "result": "[environmentaltech:ionite]",
+        "catalyst": "[minecraft:nether_star]",
+        "energy": 2000000,
+        "tier": 1,
+        "ingredients": [
+            "[environmentaltech:pladium]",
+            "[environmentaltech:pladium]",
+            "[environmentaltech:pladium]",
+            "[environmentaltech:pladium]",
+            "[dustCryotheum]",
+            "[blockPlatinum]"
+        ]
+    },
+    {
+        "mode": "ADD",
+        "result": "[bigreactors:ingotblutonium]",
+        "catalyst": "[minecraft:coal]",
+        "energy": 10000,
+        "tier": 0,
+        "ingredients": [
+            "[bigreactors:ingotcyanite]",
+            "[bigreactors:ingotcyanite]",
+            "[bigreactors:ingotcyanite]",
+            "[bigreactors:ingotcyanite]",
+            "[bigreactors:ingotcyanite]",
+            "[bigreactors:ingotcyanite]"
+        ]
+    },
+    {
+        "mode": "ADD",
+        "result": "[bigreactors:blockyellorium]",
+        "catalyst": "[minecraft:coal]",
+        "energy": 10000,
+        "tier": 0,
+        "ingredients": [
+            "[bigreactors:ingotblutonium]",
+            "[bigreactors:ingotblutonium]",
+            "[bigreactors:ingotblutonium]",
+            "[bigreactors:ingotblutonium]",
+            "[bigreactors:ingotblutonium]",
+            "[bigreactors:ingotblutonium]"
+        ]
+    },
+    {
+        "mode": "ADD",
+        "result": "[environmentaltech:pladium]",
+        "catalyst": "[minecraft:nether_star]",
+        "energy": 1000000,
+        "tier": 0,
+        "ingredients": [
+            "[environmentaltech:kyronite]",
+            "[environmentaltech:kyronite]",
+            "[environmentaltech:kyronite]",
+            "[environmentaltech:kyronite]",
+            "[dustAerotheum]",
+            "[blockSapphire]"
+        ]
+    },
+    {
+        "mode": "ADD",
+        "result": "[draconicevolution:chaos_shard]",
+        "catalyst": "[draconicevolution:chaos_shard]:1",
+        "energy": 4000000,
+        "tier": 2,
+        "ingredients": [
+            "[blockDraconiumAwakened]",
+            "[blockDraconiumAwakened]",
+            "[blockDraconiumAwakened]",
+            "[blockDraconiumAwakened]",
+            "[blockDraconiumAwakened]",
+            "[environmentaltech:aethium]"
+        ]
+    },
+    {
+        "mode": "ADD",
+        "result": "[environmentaltech:lonsdaleite_crystal]",
+        "catalyst": "[minecraft:prismarine_shard]",
+        "energy": 400000000,
+        "tier": 1,
+        "ingredients": [
+            "[crystalErodium]",
+            "[crystalErodium]",
+            "[ingotVibrantAlloy]",
+            "[ingotEnergeticAlloy]",
+            "[blockIridium]",
+            "[ingotPulsatingIron]"
+        ]
+    },
+	{
+        "mode": "ADD",
+        "result": "[fluxnetworks:flux]",
+        "catalyst": "[minecraft:redstone]",
+        "energy": 100000,
+        "tier": 1,
+        "ingredients": [
+            "[environmentaltech:kyronite]",
+            "[environmentaltech:pladium]",
+            "[blockPlatinum]"
+        ]
+    },
+    {
+        "mode": "ADD",
+        "result": "[draconicevolution:chaos_shard]:1",
+        "catalyst": "[draconicevolution:chaos_shard]:2",
+        "energy": 1000000,
+        "tier": 2,
+        "ingredients": [
+            "[blockDraconiumAwakened]",
+            "[blockDraconiumAwakened]",
+            "[blockDraconiumAwakened]",
+            "[blockDraconiumAwakened]",
+            "[blockDraconiumAwakened]",
+            "[environmentaltech:aethium]"
+        ]
+    },
+{
+        "mode": "REMOVE",
+        "result": "[blockDraconiumAwakened]",
+        "catalyst": "[blockDraconium]",
+        "ingredients": [
+            "[draconicevolution:draconic_core]",
+            "[draconicevolution:draconic_core]",
+            "[draconicevolution:draconic_core]",
+            "[draconicevolution:draconic_core]",
+            "[draconicevolution:draconic_core]",
+            "[draconicevolution:draconic_core]",
+            "[draconicevolution:dragon_heart]"
+        ]
+    },
+    {
+        "mode": "ADD",
+        "result": "[blockDraconiumAwakened]",
+        "catalyst": "[blockDraconium]",
+        "catalyst_count": 4,
+        "energy": 400000000,
+        "tier": 2,
+        "ingredients": [
+            "[draconicevolution:draconic_core]",
+            "[draconicevolution:draconic_core]",
+            "[draconicevolution:draconic_core]",
+            "[draconicevolution:draconic_core]",
+            "[draconicevolution:draconic_core]",
+            "[thaumicaugmentation:impetus_heart]",
+            "[plateVoid]",
+            "[plateVoid]"
+        ]
+    }
+]

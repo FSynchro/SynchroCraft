@@ -202,6 +202,10 @@ if (-not (Test-Path $JavaExe)) {
     Write-Host "[INFO] Installing Java 8..." -ForegroundColor Cyan
     $TemurinApi = "https://api.adoptium.net/v3/binary/latest/8/ga/windows/x64/jre/hotspot/normal/eclipse"
     $TemurinZip = Join-Path $PackRoot "temurin.zip"
+    # This part is needed because in the context of minecraft these are not loaded by default, that's why we can't install java when doing it without this line.
+    # During our last commit we deleted the runtime folder ( we were actually packaging a specific temurin java version along, we don't want that, we want the latest fresh version from temurin itself
+    Add-Type -AssemblyName System.IO.Compression.FileSystem	
+    
     (New-Object System.Net.WebClient).DownloadFile($TemurinApi, $TemurinZip)
     [System.IO.Compression.ZipFile]::ExtractToDirectory($TemurinZip, $JavaDir)
     $Inner = Get-ChildItem $JavaDir | Where-Object { $_.PSIsContainer } | Select-Object -First 1

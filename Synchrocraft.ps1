@@ -151,7 +151,19 @@ if ($NeedsUpdate) {
     Write-Host "[INFO] Installing modpack files..." -ForegroundColor Yellow
     Get-ChildItem $ExtractedFolder.FullName | ForEach-Object {
         $Dest = if ($_.Name -eq "Synchrocraft") { $PackRoot } else { Join-Path $MinecraftDir $_.Name }
-        if (Test-Path $Dest) { Remove-Item -Recurse -Force $Dest }
+        # --- NEW LOGIC START ---
+        # If we are looking at the Synchrocraft folder, specifically target the 'mods' subfolder first
+        if ($_.Name -eq "Synchrocraft") {
+            $ModsPath = Join-Path $Dest "mods"
+            if (Test-Path $ModsPath) {
+                Write-Host "[INFO] Clearing mods folder..." -ForegroundColor Gray
+                Remove-Item -Recurse -Force $ModsPath -ErrorAction SilentlyContinue
+            }
+        }
+        # --- NEW LOGIC END ---
+
+        
+        if (Test-Path $Dest) { Remove-Item -Recurse -Force $Dest -ErrorAction SilentlyContinue }
         Move-Item $_.FullName $Dest -Force
     }
     Remove-Item $ZipPath, $TempExtract -Recurse -Force

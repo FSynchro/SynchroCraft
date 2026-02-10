@@ -148,24 +148,19 @@ if ($NeedsUpdate) {
         exit 1
     }
     
-    Write-Host "[INFO] Installing modpack files..." -ForegroundColor Yellow
-    Get-ChildItem $ExtractedFolder.FullName | ForEach-Object {
-        $Dest = if ($_.Name -eq "Synchrocraft") { $PackRoot } else { Join-Path $MinecraftDir $_.Name }
-        # --- NEW LOGIC START ---
-        # If we are looking at the Synchrocraft folder, specifically target the 'mods' subfolder first
-        if ($_.Name -eq "Synchrocraft") {
-            $ModsPath = Join-Path $Dest "mods"
-            if (Test-Path $ModsPath) {
-                Write-Host "[INFO] Clearing mods folder..." -ForegroundColor Gray
-                Remove-Item -Recurse -Force $ModsPath -ErrorAction SilentlyContinue
-            }
-        }
-        # --- NEW LOGIC END ---
+Write-Host "[INFO] Installing modpack files..." -ForegroundColor Yellow
+Get-ChildItem $ExtractedFolder.FullName | ForEach-Object {
+    $Dest = if ($_.Name -eq "Synchrocraft") { $PackRoot } else { Join-Path $MinecraftDir $_.Name }
 
-        
-        if (Test-Path $Dest) { Remove-Item -Recurse -Force $Dest -ErrorAction SilentlyContinue }
-        Move-Item $_.FullName $Dest -Force
+    # If the folder already exists, remove it so we have a fresh install of that specific component
+    if (Test-Path $Dest) { 
+        Write-Host "  - Updating component: $($_.Name)" -ForegroundColor Gray
+        Remove-Item -Recurse -Force $Dest -ErrorAction SilentlyContinue 
     }
+
+    # Move the new version into place
+    Move-Item $_.FullName $Dest -Force
+}
     Remove-Item $ZipPath, $TempExtract -Recurse -Force
     Write-Host "[SUCCESS] Modpack installed!" -ForegroundColor Green
     

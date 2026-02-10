@@ -127,25 +127,20 @@ if ($NeedsUpdate) {
 }
 
 # ==============================================================================
-# 3. DOWNLOAD & EXTRACT
+# 3. DOWNLOAD & EXTRACT (FIXED INSTALLATION LOOP)
 # ==============================================================================
 if ($NeedsUpdate) {
     Write-Host "[INFO] Downloading modpack from GitHub..." -ForegroundColor Yellow
     
-    # Use direct GitHub archive URL (no authentication needed for public repos)
     $ZipUrl = "https://github.com/$RepoOwner/$RepoName/archive/refs/heads/$Branch.zip"
     $ZipPath = Join-Path $MinecraftDir "synchrocraft-update.zip"
     
     try {
-        # Download with progress
         $WebClient = New-Object System.Net.WebClient
         $WebClient.Headers.Add("User-Agent", "Synchrocraft-Updater")
         $WebClient.DownloadFile($ZipUrl, $ZipPath)
-        Write-Host "[SUCCESS] Download complete!" -ForegroundColor Green
     } catch {
         Write-Host "[ERROR] Download failed: $($_.Exception.Message)" -ForegroundColor Red
-        Write-Host "[ERROR] URL attempted: $ZipUrl" -ForegroundColor Red
-        Read-Host "Press Enter to exit"
         exit 1
     }
 
@@ -153,36 +148,47 @@ if ($NeedsUpdate) {
     $TempExtract = Join-Path $MinecraftDir "synchrocraft-temp"
     if (Test-Path $TempExtract) { Remove-Item -Recurse -Force $TempExtract }
     
-    try {
-        Add-Type -AssemblyName System.IO.Compression.FileSystem
-        [System.IO.Compression.ZipFile]::ExtractToDirectory($ZipPath, $TempExtract)
-    } catch {
-        Write-Host "[ERROR] Extraction failed: $($_.Exception.Message)" -ForegroundColor Red
-        Read-Host "Press Enter to exit"
-        exit 1
-    }
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    [System.IO.Compression.ZipFile]::ExtractToDirectory($ZipPath, $TempExtract)
 
-    $ExtractedFolder = Get-ChildItem $TempExtract | Where-Object { $_.PSIsContainer } | Select-Object -First 1
+    # GitHub zips always have a root folder like "RepoName-Main"
+    $ExtractedRoot = Get-ChildItem $TempExtract | Where-Object { $_.PSIsContainer } | Select-Object -First 1
     
-    if (-not $ExtractedFolder) {
-        Write-Host "[ERROR] No folder found in downloaded zip!" -ForegroundColor Red
-        Read-Host "Press Enter to exit"
-        exit 1
-    }
-    
-Write-Host "[INFO] Installing modpack files..." -ForegroundColor Yellow
-Get-ChildItem $ExtractedFolder.FullName | ForEach-Object {
-    $Dest = if ($_.Name -eq "Synchrocraft") { $PackRoot } else { Join-Path $MinecraftDir $_.Name }
+    Write-Host "[INFO] Installing modpack files..." -ForegroundColor Yellow
 
-    # If the folder already exists, remove it so we have a fresh install of that specific component
-    if (Test-Path $Dest) { 
-        Write-Host "  - Updating component: $($_.Name)" -ForegroundColor Gray
-        Remove-Item -Recurse -Force $Dest -ErrorAction SilentlyContinue 
+    # Iterate through everything inside the extracted GitHub folder
+    Get-ChildItem $ExtractedRoot.FullName | ForEach-Object {
+        $SrcItem = $_
+        
+        if ($SrcItem.Name -eq "Synchrocraft") {
+            # SPECIAL HANDLING FOR THE MODS/CONFIG FOLDER
+            Write-Host "  - Updating Modpack Core (mods/configs)..." -ForegroundColor Gray
+            
+            # Instead of deleting the WHOLE Synchrocraft folder (which kills your backup-temp if it's inside)
+            # We delete specific sub-folders inside Synchrocraft to ensure a clean mod/config swap
+            $TargetMods = Join-Path $PackRoot "mods"
+            if (Test-Path $TargetMods) { Remove-Item -Recurse -Force $TargetMods }
+            
+            # Now move everything FROM the ZIP's Synchrocraft folder INTO the local PackRoot
+            Get-ChildItem $SrcItem.FullName | ForEach-Object {
+                $FinalDest = Join-Path $PackRoot $_.Name
+                if (Test-Path $FinalDest) { Remove-Item -Recurse -Force $FinalDest -ErrorAction SilentlyContinue }
+                Move-Item $_.FullName $FinalDest -Force
+            }
+        } else {
+            # HANDLING FOR OTHER FILES (like the script itself or launcher files)
+            $Dest = Join-Path $MinecraftDir $SrcItem.Name
+            
+            # If it's the script itself and it's currently running, we try to move it
+            # (You mentioned it works for you, so we'll keep the direct Move-Item)
+            if (Test-Path $Dest) { 
+                Remove-Item -Recurse -Force $Dest -ErrorAction SilentlyContinue 
+            }
+            Move-Item $SrcItem.FullName $Dest -Force
+        }
     }
 
-    # Move the new version into place
-    Move-Item $_.FullName $Dest -Force
-}
+    # Final Cleanup
     Remove-Item $ZipPath, $TempExtract -Recurse -Force
     Write-Host "[SUCCESS] Modpack installed!" -ForegroundColor Green
     

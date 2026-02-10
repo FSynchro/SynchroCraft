@@ -38,39 +38,61 @@ $BackupFiles = @(
 $null = New-Item -ItemType Directory -Force -Path $PackRoot, $AssetsDir, $LibrariesDir, $JavaDir, $VersionsDir
 
 # ==============================================================================
-# 1. VERSION CHECK
+# 1. VERSION CHECK & INTEGRITY CHECK
 # ==============================================================================
-Write-Host "[INFO] Checking for updates on GitHub..." -ForegroundColor Cyan
+Write-Host "[INFO] Checking for updates and folder integrity..." -ForegroundColor Cyan
+
+# Define mods path for integrity check
+$ModsPath = Join-Path $PackRoot "mods"
+$ModsFolderEmpty = $true
+
+if (Test-Path $ModsPath) {
+    # Check if there are any files inside the mods folder
+    if ((Get-ChildItem $ModsPath).Count -gt 0) {
+        $ModsFolderEmpty = $false
+    }
+}
 
 try {
-    # Fetch the remote version file directly
     $VersionFileUrl = "https://raw.githubusercontent.com/$RepoOwner/$RepoName/$Branch/Synchrocraft/.synchrocraft-version"
     $RemoteVersion = (Invoke-WebRequest -Uri $VersionFileUrl -UseBasicParsing).Content.Trim()
     Write-Host "[INFO] Remote version: $RemoteVersion" -ForegroundColor Gray
 } catch {
     Write-Host "[ERROR] Could not fetch version from GitHub: $_" -ForegroundColor Red
-    Write-Host "[INFO] Continuing without update check..." -ForegroundColor Yellow
     $RemoteVersion = $null
 }
 
-$NeedsUpdate = $true
+$NeedsUpdate = $false
+
+# 1. Check Versioning
 if (Test-Path $LocalVersionFile) {
     $LocalVersion = (Get-Content $LocalVersionFile -Raw).Trim()
     Write-Host "[INFO] Local version:  $LocalVersion" -ForegroundColor Gray
     
-    if ($RemoteVersion -and $LocalVersion -eq $RemoteVersion) {
-        Write-Host "[SUCCESS] Synchrocraft is already up to date!" -ForegroundColor Green
-        $NeedsUpdate = $false
-    } else {
-        Write-Host "[INFO] Update available!" -ForegroundColor Yellow
+    if ($RemoteVersion -and $LocalVersion -ne $RemoteVersion) {
+        Write-Host "[INFO] Update available (Version mismatch)." -ForegroundColor Yellow
+        $NeedsUpdate = $true
     }
 } else {
-    Write-Host "[INFO] No local version found, will download modpack." -ForegroundColor Yellow
+    Write-Host "[INFO] No local version file found." -ForegroundColor Yellow
+    $NeedsUpdate = $true
 }
 
-if (-not $RemoteVersion) {
+# 2. Check Integrity (The "Empty Mods" check)
+if ($ModsFolderEmpty) {
+    Write-Host "[WARNING] Mods folder is missing or empty! Forcing update..." -ForegroundColor Yellow
+    $NeedsUpdate = $true
+}
+
+# 3. Final safety check: if we can't see the remote version, don't kill the install unless empty
+if (-not $RemoteVersion -and -not $ModsFolderEmpty) {
     Write-Host "[WARNING] Skipping update due to version check failure." -ForegroundColor Yellow
     $NeedsUpdate = $false
+}
+
+# If we are up to date and folders are full
+if (-not $NeedsUpdate) {
+    Write-Host "[SUCCESS] Synchrocraft is up to date and mods are present!" -ForegroundColor Green
 }
 
 # ==============================================================================

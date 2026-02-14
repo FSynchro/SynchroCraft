@@ -2,8 +2,6 @@
 // Adds aspects to all animals and items from Better Animals Plus mod
 // Uses ONLY valid Thaumcraft aspects
 
-import mods.thaumcraft.Aspects;
-
 // ===== BEAR ENTITIES =====
 <entity:betteranimalsplus:brownbear>.setAspects(<aspect:bestia>*8, <aspect:terra>*4, <aspect:exitium>*4, <aspect:victus>*3);
 <entity:betteranimalsplus:blackbear>.setAspects(<aspect:bestia>*8, <aspect:terra>*4, <aspect:exitium>*4, <aspect:victus>*3);
@@ -84,19 +82,12 @@ import mods.thaumcraft.Aspects;
 <betteranimalsplus:eel_meat_raw>.setAspects(<aspect:bestia>*2, <aspect:aqua>*2, <aspect:victus>*2);
 <betteranimalsplus:eel_meat_cooked>.setAspects(<aspect:bestia>*2, <aspect:aqua>*1, <aspect:victus>*4, <aspect:ignis>*1);
 
-// Goat Meat
-<betteranimalsplus:goat_meat_raw>.setAspects(<aspect:bestia>*4, <aspect:victus>*4);
-<betteranimalsplus:goat_meat_cooked>.setAspects(<aspect:bestia>*4, <aspect:victus>*6, <aspect:ignis>*1);
-
 // ===== ANIMAL RESOURCES =====
 // Antlers
 <betteranimalsplus:antler>.setAspects(<aspect:bestia>*3, <aspect:instrumentum>*2, <aspect:fabrico>*1);
 
 // Blubber
 <betteranimalsplus:blubber>.setAspects(<aspect:bestia>*3, <aspect:aqua>*2, <aspect:gelum>*1);
-
-// Goose Feather
-<betteranimalsplus:goose_feather>.setAspects(<aspect:volatus>*2, <aspect:bestia>*1, <aspect:aer>*1);
 
 // Wolf Pelt
 <betteranimalsplus:wolf_pelt_snowy>.setAspects(<aspect:bestia>*3, <aspect:fabrico>*2, <aspect:gelum>*1);
@@ -109,56 +100,6 @@ import mods.thaumcraft.Aspects;
 <betteranimalsplus:bear_cape_brown>.setAspects(<aspect:bestia>*8, <aspect:fabrico>*5, <aspect:praemunio>*3);
 <betteranimalsplus:bear_cape_black>.setAspects(<aspect:bestia>*8, <aspect:fabrico>*5, <aspect:praemunio>*3, <aspect:tenebrae>*1);
 <betteranimalsplus:bear_cape_kermode>.setAspects(<aspect:bestia>*8, <aspect:fabrico>*5, <aspect:praemunio>*3, <aspect:gelum>*1);
-
-// ===== ANIMAL HEADS (Decorative Items) =====
-<betteranimalsplus:bear_head_black>.setAspects(<aspect:bestia>*5, <aspect:sensus>*3, <aspect:exitium>*2);
-<betteranimalsplus:bear_head_brown>.setAspects(<aspect:bestia>*5, <aspect:sensus>*3, <aspect:exitium>*2);
-<betteranimalsplus:bear_head_kermode>.setAspects(<aspect:bestia>*5, <aspect:sensus>*3, <aspect:exitium>*2, <aspect:gelum>*1);
-
-<betteranimalsplus:deer_head>.setAspects(<aspect:bestia>*4, <aspect:sensus>*3, <aspect:motus>*1);
-<betteranimalsplus:reindeer_head>.setAspects(<aspect:bestia>*4, <aspect:sensus>*3, <aspect:gelum>*1);
-<betteranimalsplus:moose_head>.setAspects(<aspect:bestia>*6, <aspect:sensus>*3, <aspect:exitium>*2, <aspect:potentia>*2);
-
-<betteranimalsplus:wolf_head>.setAspects(<aspect:bestia>*4, <aspect:sensus>*3, <aspect:exitium>*2);
-<betteranimalsplus:coyote_head>.setAspects(<aspect:bestia>*3, <aspect:sensus>*3, <aspect:exitium>*1);
-<betteranimalsplus:fox_head>.setAspects(<aspect:bestia>*3, <aspect:sensus>*3);
-
-<betteranimalsplus:boar_head>.setAspects(<aspect:bestia>*4, <aspect:sensus>*3, <aspect:exitium>*2);
-<betteranimalsplus:goat_head>.setAspects(<aspect:bestia>*3, <aspect:sensus>*3);
-
-// ===== SPAWN EGGS =====
-<betteranimalsplus:spawn_egg_brownbear>.setAspects(<aspect:bestia>*3, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_blackbear>.setAspects(<aspect:bestia>*3, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_deer>.setAspects(<aspect:bestia>*2, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_reindeer>.setAspects(<aspect:bestia>*2, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_moose>.setAspects(<aspect:bestia>*3, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_feralwolf>.setAspects(<aspect:bestia>*2, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_coyote>.setAspects(<aspect:bestia>*2, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_fox>.setAspects(<aspect:bestia>*2, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_tarantula>.setAspects(<aspect:bestia>*1, <aspect:victus>*1);
-<betteranimalsplus:spawn_egg_goat>.setAspects(<aspect:bestia>*2, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_boar>.setAspects(<aspect:bestia>*2, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_badger>.setAspects(<aspect:bestia>*2, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_squirrel>.setAspects(<aspect:bestia>*1, <aspect:victus>*1);
-<betteranimalsplus:spawn_egg_pheasant>.setAspects(<aspect:bestia>*1, <aspect:victus>*1);
-<betteranimalsplus:spawn_egg_turkey>.setAspects(<aspect:bestia>*2, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_goose>.setAspects(<aspect:bestia>*1, <aspect:victus>*1);
-<betteranimalsplus:spawn_egg_songbird>.setAspects(<aspect:bestia>*1, <aspect:victus>*1);
-<betteranimalsplus:spawn_egg_lammergeier>.setAspects(<aspect:bestia>*2, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_whale>.setAspects(<aspect:bestia>*4, <aspect:victus>*3);
-<betteranimalsplus:spawn_egg_walrus>.setAspects(<aspect:bestia>*3, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_shark>.setAspects(<aspect:bestia>*2, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_barracuda>.setAspects(<aspect:bestia>*2, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_piranha>.setAspects(<aspect:bestia>*1, <aspect:victus>*1);
-<betteranimalsplus:spawn_egg_eel>.setAspects(<aspect:bestia>*1, <aspect:victus>*1);
-<betteranimalsplus:spawn_egg_lamprey>.setAspects(<aspect:bestia>*1, <aspect:victus>*1);
-<betteranimalsplus:spawn_egg_octopus>.setAspects(<aspect:bestia>*2, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_nautilus>.setAspects(<aspect:bestia>*1, <aspect:victus>*1);
-<betteranimalsplus:spawn_egg_squid>.setAspects(<aspect:bestia>*2, <aspect:victus>*2);
-<betteranimalsplus:spawn_egg_jellyfish>.setAspects(<aspect:bestia>*1, <aspect:victus>*1);
-<betteranimalsplus:spawn_egg_crab>.setAspects(<aspect:bestia>*1, <aspect:victus>*1);
-<betteranimalsplus:spawn_egg_horseshoecrab>.setAspects(<aspect:bestia>*1, <aspect:victus>*1);
-<betteranimalsplus:spawn_egg_bobbit_worm>.setAspects(<aspect:bestia>*1, <aspect:victus>*1);
 
 // ===== BLOCKS =====
 <betteranimalsplus:trillium>.setAspects(<aspect:herba>*2, <aspect:sensus>*2);

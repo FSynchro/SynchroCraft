@@ -2,8 +2,6 @@
 // Adds aspects to all animals and items from Animania Base mod
 // Uses ONLY valid Thaumcraft aspects
 
-import mods.thaumcraft.Aspects;
-
 // ===== COW ENTITIES (All Breeds) =====
 // Cows - Different breeds
 <entity:animania:cow_angus>.setAspects(<aspect:bestia>*5, <aspect:terra>*3, <aspect:victus>*2);
@@ -133,17 +131,11 @@ import mods.thaumcraft.Aspects;
 <entity:animania:kit_rex>.setAspects(<aspect:bestia>*1, <aspect:terra>*1, <aspect:victus>*1);
 
 // ===== ANIMAL PRODUCTS =====
-// Milk - Different types
-<animania:friesian_milk>.setAspects(<aspect:aqua>*3, <aspect:victus>*3, <aspect:bestia>*1);
-<animania:holstein_milk>.setAspects(<aspect:aqua>*3, <aspect:victus>*3, <aspect:bestia>*1);
-<animania:jersey_milk>.setAspects(<aspect:aqua>*3, <aspect:victus>*4, <aspect:bestia>*1);
-<animania:goat_milk>.setAspects(<aspect:aqua>*3, <aspect:victus>*3, <aspect:bestia>*1);
-
-// Cheese
-<animania:friesian_cheese>.setAspects(<aspect:victus>*4, <aspect:bestia>*2, <aspect:permutatio>*1);
-<animania:holstein_cheese>.setAspects(<aspect:victus>*4, <aspect:bestia>*2, <aspect:permutatio>*1);
-<animania:jersey_cheese>.setAspects(<aspect:victus>*4, <aspect:bestia>*2, <aspect:permutatio>*1);
-<animania:goat_cheese>.setAspects(<aspect:victus>*4, <aspect:bestia>*2, <aspect:permutatio>*1);
+// Cheese Wheels
+<animania:friesian_cheese_wheel>.setAspects(<aspect:victus>*4, <aspect:bestia>*2, <aspect:permutatio>*1);
+<animania:holstein_cheese_wheel>.setAspects(<aspect:victus>*4, <aspect:bestia>*2, <aspect:permutatio>*1);
+<animania:jersey_cheese_wheel>.setAspects(<aspect:victus>*4, <aspect:bestia>*2, <aspect:permutatio>*1);
+<animania:sheep_cheese_wheel>.setAspects(<aspect:victus>*4, <aspect:bestia>*2, <aspect:permutatio>*1);
 
 // Meat - Raw
 <animania:raw_prime_beef>.setAspects(<aspect:bestia>*4, <aspect:victus>*4);
@@ -151,6 +143,9 @@ import mods.thaumcraft.Aspects;
 <animania:raw_prime_chicken>.setAspects(<aspect:bestia>*3, <aspect:victus>*3);
 <animania:raw_prime_mutton>.setAspects(<aspect:bestia>*4, <aspect:victus>*4);
 <animania:raw_prime_rabbit>.setAspects(<aspect:bestia>*3, <aspect:victus>*3);
+<animania:raw_horse>.setAspects(<aspect:bestia>*4, <aspect:victus>*4);
+<animania:raw_chevon>.setAspects(<aspect:bestia>*4, <aspect:victus>*4);
+<animania:raw_prime_chevon>.setAspects(<aspect:bestia>*4, <aspect:victus>*5);
 
 // Meat - Cooked
 <animania:cooked_prime_beef>.setAspects(<aspect:bestia>*4, <aspect:victus>*6, <aspect:ignis>*1);
@@ -158,26 +153,21 @@ import mods.thaumcraft.Aspects;
 <animania:cooked_prime_chicken>.setAspects(<aspect:bestia>*3, <aspect:victus>*5, <aspect:ignis>*1);
 <animania:cooked_prime_mutton>.setAspects(<aspect:bestia>*4, <aspect:victus>*6, <aspect:ignis>*1);
 <animania:cooked_prime_rabbit>.setAspects(<aspect:bestia>*3, <aspect:victus>*5, <aspect:ignis>*1);
+<animania:cooked_horse>.setAspects(<aspect:bestia>*4, <aspect:victus>*6, <aspect:ignis>*1);
+<animania:cooked_chevon>.setAspects(<aspect:bestia>*4, <aspect:victus>*6, <aspect:ignis>*1);
+<animania:cooked_prime_chevon>.setAspects(<aspect:bestia>*4, <aspect:victus>*7, <aspect:ignis>*1);
 
 // Eggs
 <animania:brown_egg>.setAspects(<aspect:bestia>*2, <aspect:victus>*2);
-<animania:fertilized_brown_egg>.setAspects(<aspect:bestia>*2, <aspect:victus>*3);
 
-// Wool
-<animania:wool>.setAspects(<aspect:fabrico>*3, <aspect:bestia>*2);
-
-// Leather and Hide
-<animania:cow_hide>.setAspects(<aspect:bestia>*4, <aspect:fabrico>*2);
-
-// ===== TROUGHS AND BLOCKS =====
-<animania:trough>.setAspects(<aspect:herba>*4, <aspect:aqua>*2, <aspect:bestia>*1);
-<animania:hamster_wheel>.setAspects(<aspect:herba>*3, <aspect:machina>*2, <aspect:motus>*2, <aspect:potentia>*1);
-
-// Nest
-<animania:nest>.setAspects(<aspect:herba>*2, <aspect:bestia>*2);
-
-// Salt Lick
-<animania:salt_lick>.setAspects(<aspect:terra>*2, <aspect:victus>*1, <aspect:bestia>*1);
+// Wool - Different colors (damage values 0-6)
+<animania:wool:0>.setAspects(<aspect:fabrico>*3, <aspect:bestia>*2);
+<animania:wool:1>.setAspects(<aspect:fabrico>*3, <aspect:bestia>*2);
+<animania:wool:2>.setAspects(<aspect:fabrico>*3, <aspect:bestia>*2);
+<animania:wool:3>.setAspects(<aspect:fabrico>*3, <aspect:bestia>*2);
+<animania:wool:4>.setAspects(<aspect:fabrico>*3, <aspect:bestia>*2);
+<animania:wool:5>.setAspects(<aspect:fabrico>*3, <aspect:bestia>*2);
+<animania:wool:6>.setAspects(<aspect:fabrico>*3, <aspect:bestia>*2);
 
 // ===== CRAFTING ITEMS =====
 <animania:riding_crop>.setAspects(<aspect:herba>*2, <aspect:bestia>*1, <aspect:instrumentum>*1);

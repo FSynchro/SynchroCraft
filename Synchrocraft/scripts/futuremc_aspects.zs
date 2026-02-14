@@ -2,8 +2,6 @@
 // Adds aspects to all items and mobs from the FutureMC mod
 // Uses ONLY valid Thaumcraft aspects
 
-import mods.thaumcraft.Aspects;
-
 // ===== FISH ENTITIES =====
 // Fish mobs from 1.13
 <entity:futuremc:cod>.setAspects(<aspect:bestia>*2, <aspect:aqua>*3);
@@ -21,10 +19,6 @@ import mods.thaumcraft.Aspects;
 // ===== FISH ITEMS =====
 <minecraft:fish:0>.setAspects(<aspect:bestia>*2, <aspect:aqua>*2, <aspect:victus>*1);  // Cod
 <minecraft:fish:1>.setAspects(<aspect:bestia>*2, <aspect:aqua>*2, <aspect:victus>*2);  // Salmon
-<futuremc:pufferfish>.setAspects(<aspect:bestia>*2, <aspect:aqua>*2, <aspect:vitium>*3);
-<futuremc:tropical_fish>.setAspects(<aspect:bestia>*2, <aspect:aqua>*2, <aspect:sensus>*2);
-<futuremc:cooked_cod>.setAspects(<aspect:bestia>*2, <aspect:ignis>*1, <aspect:victus>*3);
-<futuremc:cooked_salmon>.setAspects(<aspect:bestia>*2, <aspect:ignis>*1, <aspect:victus>*4);
 
 // ===== WEAPONS & TOOLS =====
 // Trident
@@ -81,10 +75,6 @@ import mods.thaumcraft.Aspects;
 <futuremc:wither_rose>.setAspects(<aspect:herba>*2, <aspect:mortuus>*3, <aspect:vitium>*2);
 <futuremc:cornflower>.setAspects(<aspect:herba>*2, <aspect:sensus>*1);
 
-<futuremc:white_dye>.setAspects(<aspect:sensus>*2, <aspect:lux>*1);
-<futuremc:black_dye>.setAspects(<aspect:sensus>*2, <aspect:tenebrae>*1);
-<futuremc:blue_dye>.setAspects(<aspect:sensus>*2, <aspect:aqua>*1);
-
 // ===== STRIPPED LOGS & WOOD =====
 <futuremc:stripped_oak_log>.setAspects(<aspect:herba>*4);
 <futuremc:stripped_spruce_log>.setAspects(<aspect:herba>*4);
@@ -121,16 +111,6 @@ import mods.thaumcraft.Aspects;
 <futuremc:netherite_scrap>.setAspects(<aspect:metallum>*6, <aspect:infernum>*3);
 <futuremc:netherite_ingot>.setAspects(<aspect:metallum>*10, <aspect:infernum>*5, <aspect:praecantatio>*2);
 
-// Blackstone
-<futuremc:blackstone>.setAspects(<aspect:terra>*2, <aspect:infernum>*1, <aspect:tenebrae>*1);
-<futuremc:polished_blackstone>.setAspects(<aspect:terra>*2, <aspect:infernum>*1, <aspect:ordo>*1);
-<futuremc:chiseled_polished_blackstone>.setAspects(<aspect:terra>*2, <aspect:infernum>*1, <aspect:fabrico>*1);
-<futuremc:gilded_blackstone>.setAspects(<aspect:terra>*2, <aspect:metallum>*1, <aspect:infernum>*1, <aspect:desiderium>*1);
-
-// Basalt
-<futuremc:basalt>.setAspects(<aspect:terra>*2, <aspect:ignis>*2);
-<futuremc:polished_basalt>.setAspects(<aspect:terra>*2, <aspect:ignis>*2, <aspect:ordo>*1);
-
 // Walls (1.14)
 <futuremc:brick_wall>.setAspects(<aspect:terra>*2, <aspect:ignis>*1);
 <futuremc:andesite_wall>.setAspects(<aspect:terra>*2);
@@ -144,8 +124,5 @@ import mods.thaumcraft.Aspects;
 <futuremc:nether_brick_wall>.setAspects(<aspect:terra>*2, <aspect:infernum>*1);
 <futuremc:end_stone_brick_wall>.setAspects(<aspect:terra>*2, <aspect:alienis>*1);
 <futuremc:red_nether_brick_wall>.setAspects(<aspect:terra>*2, <aspect:infernum>*1);
-
-// ===== MUSIC DISC =====
-<futuremc:music_disc_pigstep>.setAspects(<aspect:sensus>*5, <aspect:sonus>*5, <aspect:praecantatio>*2);
 
 print("FutureMC Thaumcraft Aspects loaded successfully!");

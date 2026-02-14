@@ -2,8 +2,6 @@
 // Adds aspects to all animals and items from Animania Extra mod
 // Uses ONLY valid Thaumcraft aspects
 
-import mods.thaumcraft.Aspects;
-
 // ===== PEACOCK ENTITIES =====
 // Peacocks - Male
 <entity:animania:peacock_blue>.setAspects(<aspect:bestia>*4, <aspect:volatus>*3, <aspect:sensus>*4, <aspect:victus>*2);
@@ -48,21 +46,13 @@ import mods.thaumcraft.Aspects;
 <entity:animania:toad>.setAspects(<aspect:bestia>*2, <aspect:aqua>*1, <aspect:terra>*1, <aspect:victus>*1);
 <entity:animania:dart_frog>.setAspects(<aspect:bestia>*1, <aspect:aqua>*1, <aspect:vitium>*3, <aspect:sensus>*2);
 
-// ===== PEACOCK ITEMS =====
-<animania:peacock_feather_blue>.setAspects(<aspect:volatus>*2, <aspect:sensus>*3, <aspect:bestia>*1);
-<animania:peacock_feather_white>.setAspects(<aspect:volatus>*2, <aspect:sensus>*3, <aspect:bestia>*1, <aspect:lux>*1);
-<animania:peacock_feather_charcoal>.setAspects(<aspect:volatus>*2, <aspect:sensus>*3, <aspect:bestia>*1);
-<animania:peacock_feather_opal>.setAspects(<aspect:volatus>*2, <aspect:sensus>*3, <aspect:bestia>*1, <aspect:praecantatio>*1);
-<animania:peacock_feather_peach>.setAspects(<aspect:volatus>*2, <aspect:sensus>*3, <aspect:bestia>*1);
-<animania:peacock_feather_purple>.setAspects(<aspect:volatus>*2, <aspect:sensus>*3, <aspect:bestia>*1);
-<animania:peacock_feather_taupe>.setAspects(<aspect:volatus>*2, <aspect:sensus>*3, <aspect:bestia>*1);
-
-// Peacock Eggs
-<animania:peacock_egg_blue>.setAspects(<aspect:bestia>*2, <aspect:victus>*2);
-<animania:peacock_egg_white>.setAspects(<aspect:bestia>*2, <aspect:victus>*2);
-
-// ===== HEDGEHOG & HAMSTER ITEMS =====
-<animania:hedgehog_spawn_egg>.setAspects(<aspect:bestia>*1, <aspect:victus>*1);
-<animania:hamster_food>.setAspects(<aspect:herba>*2, <aspect:victus>*1, <aspect:bestia>*1);
+// ===== PEACOCK FEATHERS =====
+<animania:blue_peacock_feather>.setAspects(<aspect:volatus>*2, <aspect:sensus>*3, <aspect:bestia>*1);
+<animania:white_peacock_feather>.setAspects(<aspect:volatus>*2, <aspect:sensus>*3, <aspect:bestia>*1, <aspect:lux>*1);
+<animania:charcoal_peacock_feather>.setAspects(<aspect:volatus>*2, <aspect:sensus>*3, <aspect:bestia>*1);
+<animania:opal_peacock_feather>.setAspects(<aspect:volatus>*2, <aspect:sensus>*3, <aspect:bestia>*1, <aspect:praecantatio>*1);
+<animania:peach_peacock_feather>.setAspects(<aspect:volatus>*2, <aspect:sensus>*3, <aspect:bestia>*1);
+<animania:purple_peacock_feather>.setAspects(<aspect:volatus>*2, <aspect:sensus>*3, <aspect:bestia>*1);
+<animania:taupe_peacock_feather>.setAspects(<aspect:volatus>*2, <aspect:sensus>*3, <aspect:bestia>*1);
 
 print("Animania Extra Animals Thaumcraft Aspects loaded successfully!");

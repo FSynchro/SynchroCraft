@@ -2,8 +2,6 @@
 // Adds aspects to all animals and items from Animania Farm mod
 // Uses ONLY valid Thaumcraft aspects
 
-import mods.thaumcraft.Aspects;
-
 // ===== GOAT ENTITIES (All Breeds) =====
 // Does - Female Goats
 <entity:animania:doe_alpine>.setAspects(<aspect:bestia>*4, <aspect:terra>*2, <aspect:victus>*2);
@@ -41,25 +39,5 @@ import mods.thaumcraft.Aspects;
 
 // Foals - Baby Horses
 <entity:animania:foal_draft>.setAspects(<aspect:bestia>*4, <aspect:terra>*2, <aspect:motus>*2, <aspect:victus>*2);
-
-// ===== GOAT PRODUCTS =====
-// Goat Milk
-<animania:goat_milk>.setAspects(<aspect:aqua>*3, <aspect:victus>*3, <aspect:bestia>*1);
-
-// Goat Cheese
-<animania:goat_cheese>.setAspects(<aspect:victus>*4, <aspect:bestia>*2, <aspect:permutatio>*1);
-
-// Goat Meat
-<animania:raw_chevon>.setAspects(<aspect:bestia>*4, <aspect:victus>*4);
-<animania:cooked_chevon>.setAspects(<aspect:bestia>*4, <aspect:victus>*6, <aspect:ignis>*1);
-
-// Goat Horn
-<animania:goat_horn>.setAspects(<aspect:bestia>*2, <aspect:instrumentum>*1, <aspect:sonus>*1);
-
-// Mohair (from Angora goats)
-<animania:mohair>.setAspects(<aspect:fabrico>*3, <aspect:bestia>*2);
-
-// ===== HORSE PRODUCTS =====
-// Draft Horse specific items would go here if they exist in the mod
 
 print("Animania Farm Animals Thaumcraft Aspects loaded successfully!");
